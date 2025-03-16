@@ -1,0 +1,50 @@
+# 服务端配置
+server:
+  # 端口设置
+  port: 9201
+
+spring:
+  # 配置应用信息
+  application:
+    # 应用名
+    name: wechat-ferry
+  # swagger适配
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml
+
+wechat:
+  ferry:
+    dll-path: C:\Users\Administrator\Desktop\ferry\v39.4.0\sdk.dll
+    socket-port: 10086
+    contacts-type-mixed:
+      - filehelper|文件传输助手
+    contacts-type-official:
+      - weixinguanhaozhushou|微信公众平台
+    # 智谱AI-key
+    zhi-pu-ai-key: 7c83caebe118067fe392062a3ac36d6c.lLa9h737u5oEHErp
+    silicon-flow-ai-key: xxxxxx
+    admin-users:
+      - wxid_fdl4q097b1x122
+    open-msg-groups:
+      - 38945187624@chatroom
+      - 49834181644@chatroom
+      - 42967742323@chatroom
+      - 48038697790@chatroom
+      - 85708110@chatroom
+      - 2237284818@chatroom
+      - 19419518398@chatroom
+      - 23158476747@chatroom
+      - 53212918970@chatroom
+    receive-msg-callback-switch: false
+    receive-msg-callback-urls:
+      - http://localhost:9001/msg
+    send-msg-callback-flag: '1'
+    send-msg-callback-urls:
+      - http://localhost:9001/msg
+    third-party-ok-codes:
+      code: '200'
